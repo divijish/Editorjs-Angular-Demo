@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgxEditorJSComponent, NgxEditorJSService } from '@tinynodes/ngx-editorjs';
+import { NgxEditorJSPluginService } from '@tinynodes/ngx-editorjs-plugins';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'editorexample';
+
+
+  @ViewChild('ngxEditorJS', { read: NgxEditorJSComponent, static: true })
+  ngxEditorJS!: NgxEditorJSComponent;
+
+
+  constructor(private readonly editorService: NgxEditorJSService, private readonly editorPluginService : NgxEditorJSPluginService){
+
+  }
+
+
+  public holder = 'ngx-editorjs-demo';
+
+onSave(){
+  console.log("Saving");
+}
+
 }

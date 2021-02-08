@@ -30,7 +30,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@editorjs/header/dist/bundle.js"]
           },
           "configurations": {
             "production": {
